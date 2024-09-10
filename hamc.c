@@ -2,12 +2,7 @@
 #include <stdbool.h>
 #include <stdlib.h>
 #include <time.h>
-
-#define N 16
-
-short find_xor_ones(bool a[]);
-bool is_odd(bool a[]);
-void print_bits(bool a[]);
+#include "bits.h"
 
 int main()
 {
@@ -56,37 +51,4 @@ int main()
   printf("XOR of ones: %u\n", xor_ones);
   
   return 0;
-}
-
-
-
-
-
-
-
-short find_xor_ones(bool a[]) {
-  short n = 0;
-  for (short i = 0; i < N; i++) {
-    if (a[i]) {
-      n = n ^ i;
-    }
-  }
-  return n;
-}
-
-bool is_odd(bool a[]) {
-  bool n = false;
-  for (short i = 0; i < N; i++) {
-    if (a[i]) {
-      n = !n;
-    }
-  }
-  return n;
-}
-
-void print_bits(bool a[]) {
-  for (short i = 0; i < N; i++) {
-    printf("%u", a[i]);
-  }
-  printf("\n");
 }
